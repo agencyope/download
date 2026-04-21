@@ -5,113 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>تحميل تطبيق سيلفي</title>
     <style>
-        /* Deep, modern dark background with a subtle ambient glow */
+        /* Soft, fresh, light-green background */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #0b0f19;
-            background-image: radial-gradient(circle at 50% 120%, #2a1b40, #0b0f19 60%);
+            background-color: #f0fdf4; /* Very light mint/green tint */
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
         }
 
-        .download-wrapper {
-            position: relative;
-            width: 85%;
-            max-width: 350px;
-        }
-
-        /* The glowing animated ring behind the button */
-        .glow-effect {
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            background: linear-gradient(45deg, #e11d48, #f59e0b, #e11d48);
-            background-size: 200% 200%;
-            border-radius: 16px;
-            z-index: 0;
-            filter: blur(14px);
-            opacity: 0.8;
-            animation: pulseGlow 3s infinite alternate, gradientShift 4s ease infinite;
-        }
-
-        /* The main button - Dark frosted glass effect */
         .download-btn {
-            position: relative;
-            display: block;
-            padding: 20px 24px;
-            font-size: 22px;
-            color: #ffffff;
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            text-decoration: none;
-            border-radius: 14px;
-            font-weight: 800;
-            text-align: center;
-            box-sizing: border-box;
-            z-index: 1;
-            transition: transform 0.1s ease, background 0.3s ease;
-            -webkit-tap-highlight-color: transparent;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-        }
-
-        /* Animations */
-        @keyframes pulseGlow {
-            0% { opacity: 0.6; filter: blur(12px); }
-            100% { opacity: 1; filter: blur(18px); }
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Mobile tap feedback */
-        .download-btn:active {
-            transform: scale(0.93);
-            background: rgba(15, 23, 42, 0.9);
-        }
-
-        /* Icon layout */
-        .btn-content {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            padding: 18px 32px;
+            font-size: 22px;
+            color: #ffffff;
+            /* Vibrant, energetic green gradient */
+            background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+            text-decoration: none;
+            /* Fully rounded pill shape for a more organic feel */
+            border-radius: 50px; 
+            font-weight: bold;
+            box-shadow: 0 8px 24px rgba(34, 197, 94, 0.4);
+            width: 85%;
+            max-width: 320px;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            /* Gentle breathing animation to give it "energy" */
+            animation: breathe 3s ease-in-out infinite;
+            transition: transform 0.1s ease, box-shadow 0.2s ease;
+        }
+
+        /* The breathing effect */
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); box-shadow: 0 8px 24px rgba(34, 197, 94, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 12px 30px rgba(34, 197, 94, 0.6); }
+        }
+
+        /* Snappy physical feedback when pressed on mobile */
+        .download-btn:active {
+            animation: none; /* Stops the breathing while pressing */
+            transform: scale(0.95);
+            box-shadow: 0 4px 10px rgba(21, 128, 61, 0.4);
+            background: linear-gradient(135deg, #16a34a 0%, #14532d 100%);
         }
 
         .download-icon {
-            width: 26px;
-            height: 26px;
+            width: 24px;
+            height: 24px;
             fill: currentColor;
-            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
         }
     </style>
 </head>
 <body>
 
-    <div class="download-wrapper">
-        <div class="glow-effect"></div>
-        
-        <a href="https://github.com/agencyope/redirect/releases/download/main/selfie.apk" class="download-btn">
-            <div class="btn-content">
-                <svg class="download-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-                </svg>
-                <span>تحميل تطبيق سيلفي</span>
-            </div>
-        </a>
-    </div>
+    <a href="https://github.com/agencyope/redirect/releases/download/main/selfie.apk" class="download-btn">
+        <svg class="download-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+        </svg>
+        <span>تحميل تطبيق سيلفي</span>
+    </a>
 
 </body>
 </html>
