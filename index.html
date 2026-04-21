@@ -2,57 +2,99 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تحميل تطبيق سيلفي</title>
     <style>
-        /* Soft, fresh, light-green background */
+        /* Light mint background */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #f0fdf4; /* Very light mint/green tint */
+            background-color: #f0fdf4;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
+            color: #333;
         }
 
+        /* The Card - Looks great on PC and scales down for Mobile */
+        .container {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.15);
+            text-align: center;
+            width: 90%;
+            max-width: 420px; /* This stops it from stretching too wide on PC */
+            box-sizing: border-box;
+        }
+
+        /* The Big App Icon */
+        .app-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #22c55e, #15803d);
+            border-radius: 22px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+        }
+
+        .app-icon svg {
+            width: 46px;
+            height: 46px;
+            fill: currentColor;
+        }
+
+        /* Text Styles */
+        h1 {
+            margin: 0 0 12px;
+            font-size: 26px;
+            color: #166534;
+        }
+
+        p {
+            margin: 0 0 30px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+
+        /* The Button */
         .download-btn {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 10px;
-            padding: 18px 32px;
-            font-size: 22px;
+            padding: 16px 24px;
+            font-size: 20px;
             color: #ffffff;
-            /* Vibrant, energetic green gradient */
             background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
             text-decoration: none;
-            /* Fully rounded pill shape for a more organic feel */
-            border-radius: 50px; 
+            border-radius: 50px;
             font-weight: bold;
             box-shadow: 0 8px 24px rgba(34, 197, 94, 0.4);
-            width: 85%;
-            max-width: 320px;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-            /* Gentle breathing animation to give it "energy" */
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
             animation: breathe 3s ease-in-out infinite;
-            transition: transform 0.1s ease, box-shadow 0.2s ease;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        /* The breathing effect */
-        @keyframes breathe {
-            0%, 100% { transform: scale(1); box-shadow: 0 8px 24px rgba(34, 197, 94, 0.4); }
-            50% { transform: scale(1.02); box-shadow: 0 12px 30px rgba(34, 197, 94, 0.6); }
+        /* PC Mouse Hover Effect */
+        .download-btn:hover {
+            background: linear-gradient(135deg, #16a34a 0%, #14532d 100%);
+            transform: scale(1.03);
+            animation: none; /* Stops breathing while hovering with mouse */
         }
 
-        /* Snappy physical feedback when pressed on mobile */
+        /* Mobile Touch Effect */
         .download-btn:active {
-            animation: none; /* Stops the breathing while pressing */
             transform: scale(0.95);
             box-shadow: 0 4px 10px rgba(21, 128, 61, 0.4);
-            background: linear-gradient(135deg, #16a34a 0%, #14532d 100%);
         }
 
         .download-icon {
@@ -60,16 +102,34 @@
             height: 24px;
             fill: currentColor;
         }
+
+        /* Energy Animation */
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); box-shadow: 0 8px 24px rgba(34, 197, 94, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 12px 30px rgba(34, 197, 94, 0.6); }
+        }
     </style>
 </head>
 <body>
 
-    <a href="https://github.com/agencyope/redirect/releases/download/main/selfie.apk" class="download-btn">
-        <svg class="download-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-        </svg>
-        <span>تحميل تطبيق سيلفي</span>
-    </a>
+    <div class="container">
+        <div class="app-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="3.2"/>
+                <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+            </svg>
+        </div>
+
+        <h1>تطبيق سيلفي</h1>
+        <p>التقط أجمل اللحظات وشاركها مع أصدقائك. حمل التطبيق الآن للحصول على أفضل الفلاتر وتجربة تصوير احترافية مباشرة من هاتفك!</p>
+
+        <a href="https://github.com/agencyope/redirect/releases/download/main/selfie.apk" class="download-btn">
+            <svg class="download-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+            </svg>
+            <span>تحميل التطبيق الآن</span>
+        </a>
+    </div>
 
 </body>
 </html>
